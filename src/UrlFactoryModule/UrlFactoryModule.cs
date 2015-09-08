@@ -33,8 +33,6 @@ namespace UrlFactoryModule
             {
                 context.Response.Redirect(result.ProcessedUrl.Uri.AbsoluteUri, true);
             }
-
-            
         }
     }
 }

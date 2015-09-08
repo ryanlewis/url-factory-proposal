@@ -15,9 +15,11 @@ namespace UrlFactory.Core.Tests
                 .LowerCaseUrl()
                 .StripDefaultNames()
                 .EnsureTrailingSlash()
-                .CanonicalDomain("www.bla.com");
-                
+                .CanonicalDomain("www.bla.com")
+                .AddRewriteMap("rewrites.config");
+
             var pipeline = new UrlRequestPipeline(config);
+
             var result = pipeline.Process(new Uri("http://bla.com/Index.html"));
 
             Assert.Equal(new Uri("http://www.bla.com/"), result.ProcessedUrl.Uri);
