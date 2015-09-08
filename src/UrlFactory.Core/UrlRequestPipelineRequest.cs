@@ -13,8 +13,12 @@ namespace UrlFactory.Core
 
         public bool RedirectRequired { get; set; }
 
+        public bool RewriteRequired { get; set; }
+
         public Uri Url { get; private set; }
+
         public UriBuilder ProcessedUrl { get; set; }
+
         public List<UrlRequestRuleResult> RuleResults { get; set; } = new List<UrlRequestRuleResult>();
     }
 }
